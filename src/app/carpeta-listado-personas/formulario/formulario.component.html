@@ -1,0 +1,67 @@
+<div class="box">
+  <form class="item" #f="ngForm" (ngSubmit)="f.form.valid && agregarPersona()">
+    <input
+      type="text"
+      name="nombre"
+      id="nombre"
+      placeholder="nombre"
+      class="form-control"
+      [(ngModel)]="nombreInput"
+      required
+    />
+    <!--  [(ngModel)]="nombreInput"   #nombreRef-->
+
+    <input
+      type="text"
+      name="apellido"
+      id="apellido"
+      placeholder="apellido"
+      class="form-control"
+      [(ngModel)]="apellidoInput"
+      required
+    />
+    <!-- [(ngModel)]="apellidoInput"  #apellidoRef -->
+
+    <button type="submit" style="cursor: pointer">+</button>
+    <button
+      type="submit"
+      *ngIf="index != null"
+      style="cursor: pointer"
+      class="buttonRed"
+      (click)="eliminarPersona()"
+    >
+      -
+    </button>
+  </form>
+  <!--form class="row gy-2 gx-3 align-items-center">
+    <div class="form-group col-md-2">
+      <label class="visually-hidden" for="numero1">numero1</label>
+      <input
+        type="text"
+        name="numero1"
+        id="numero1"
+        placeholder="numero1"
+        class="form-control"
+        [(ngModel)]="num1"
+      />
+    </div>
+    <div class="form-group col-md-2">
+      <label class="visually-hidden" for="numero2">numero2</label>
+  
+      <input
+        type="text"
+        name="numero2"
+        id="numero2"
+        placeholder="numero2"
+        class="form-control"
+        [(ngModel)]="num2"
+      />
+    </div>
+  
+    <div class="col-auto">
+      <button class="btn btn-primary" type="submit" (click)="agregarResultado()">
+        Agregar
+      </button>
+    </div>
+  </form-->
+</div>

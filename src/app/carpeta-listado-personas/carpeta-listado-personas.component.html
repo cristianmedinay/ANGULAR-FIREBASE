@@ -1,0 +1,31 @@
+<div style="text-align: center">
+  <button type="cursor:pointer" (click)="agregar()">+</button>
+</div>
+
+<div class="box" id="heading">
+  <h1>{{ titulo }}</h1>
+</div>
+<div class="box">
+  <!--app-formulario
+        (personacreada)="onpersonaAgregada($event)"
+      ></app-formulario-->
+  <!--app-formulario></app-formulario-->
+  <router-outlet></router-outlet>
+</div>
+
+<div class="box">
+  <app-hijo-persona
+    *ngFor="let item of personas; let i = index"
+    [persona]="item"
+    [indice]="i"
+  >
+  </app-hijo-persona>
+</div>
+
+<!--div class="container">
+    <h3>{{ titulo2 }}</h3>
+    <app-formulario (resultado)="agregarResultado($event)"></app-formulario>
+    <div class="col">
+      <app-hijo-persona [resultad]="result"> </app-hijo-persona>
+    </div>
+  </div-->

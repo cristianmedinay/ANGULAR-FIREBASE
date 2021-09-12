@@ -1,0 +1,19 @@
+<div class="item">
+  <!--input type="checkbox" class="btn btn-primary" (click)="emitirsaludo()" /-->
+  <p>
+    <a
+      [routerLink]="['/carpeta-listado-personas', indice]"
+      [queryParams]="{ modoEdicion: '1' }"
+      style="text-decoration: none"
+    >
+      {{ persona.nombre }}
+      {{ persona.apellido }}
+    </a>
+  </p>
+</div>
+
+<!--div class="container">
+  <div class="col">
+    <p>{{ indice + 1 }} Resultado {{ resultad }}</p>
+  </div>
+</div-->

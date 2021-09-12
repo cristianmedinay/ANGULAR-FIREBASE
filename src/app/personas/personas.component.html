@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Listado de Personas</h1>
+      <button
+        class="btn btn-primary"
+        [disabled]="deshabilitar"
+        (click)="evento()"
+      >
+        Add persona
+      </button>
+      <p *ngIf="mostrar; else sinPersona">
+        {{ mensaje }} con el titulo de {{ titulo }}
+      </p>
+      <ng-template #sinPersona>Hola no hay ninguna persona</ng-template>
+
+      <app-persona></app-persona>
+      <label for="">Titulo Persona</label>
+      <!--input
+        type="text"
+        class="form-control"
+        (input)="modificarTitulo($event)"
+      /-->
+      <input
+        type="text"
+        class="form-control"
+        name="titulo"
+        [(ngModel)]="titulo"
+      />
+      {{ titulo }}
+    </div>
+  </div>
+</div>
+<!--div class="container">
+  <form>
+    <div class="from-group">
+      <div class="col">
+        <label>Input uno</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="puno"
+          name="puno"
+        />
+      </div>
+    </div>
+    <div class="from-group">
+      <div class="col">
+        <label>Input dos</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="pdos"
+          name="pdos"
+        />
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="sumar()">
+      Sumar
+    </button>
+  </form>
+  <p>Resultado : {{ resultado }}</p>
+</div-->
