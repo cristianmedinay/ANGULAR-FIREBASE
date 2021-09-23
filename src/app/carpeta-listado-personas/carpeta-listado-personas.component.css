@@ -1,0 +1,11 @@
+.fondo {
+  width: auto;
+  padding: 5%;
+  background-color: transparent;
+
+  background: url(../../assets/bg-pattern.png), #2196f3;
+  background: url(../../assets/bg-pattern.png),
+    -webkit-gradient(linear, right top, left top, from(#2196f3), to(#009688));
+  background: url(../../assets/bg-pattern.png),
+    linear-gradient(to left, #2196f3, #009688);
+}

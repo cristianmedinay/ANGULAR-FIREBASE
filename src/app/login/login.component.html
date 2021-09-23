@@ -1,0 +1,44 @@
+<div class="formsx">
+  <form class="row g-3 f" action="" #f="ngForm" (ngSubmit)="(f.form.valid)">
+    <div class="col-md-6 email">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input
+        class="form-control"
+        type="email"
+        name="email"
+        placeholder="Email"
+        ngModel
+        required
+        size="10"
+      />
+    </div>
+    <div class="col-md-6 password">
+      <label for="inputPassword4" class="form-label">Password</label>
+      <input
+        class="form-control"
+        type="password"
+        name="password"
+        placeholder="password"
+        ngModel
+        required
+        size="15"
+      />
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary" (click)="login(f)">
+        Sign in
+      </button>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary" (click)="registro()">
+        register
+      </button>
+    </div>
+  </form>
+  <div class="col-12" style="text-align: center; margin: 10px">
+    <button type="submit" class="btn btn-primary" (click)="GoogleP()">
+      Iniciar Google
+    </button>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 import { EventEmitter, Injectable, Output } from "@angular/core";
 import { DataServices } from "./data.services";
 import { LoggingService } from "./LoggingService.service";
+import { LoginService } from "./login.service";
 import { Persona } from "./persona.model";
 
 @Injectable()
@@ -15,14 +16,20 @@ export class PersonasServicio{
     }
 
 
-    setPersonas(persona : Persona[]){
-      this.personas = persona;
-    }
+   
 
     //FIREBASE
     obtenerPersonas(){
       return this.dataServices.cargarPersonas();
     }
+    setPersonas(persona : Persona[]){
+      this.personas = persona;
+    }
+    modificarFirebase(index:number,persona: Persona){
+      return this.dataServices.modificarPersona(index, persona);
+    }
+
+
 
 
 
@@ -43,10 +50,22 @@ export class PersonasServicio{
       let persona1 :Persona= this.personas[indexx];
       persona1.nombre = perso.nombre;
       persona1.apellido = perso.apellido;
+      this.dataServices.modificarPersona(indexx,perso);
     }
     deletePersona(index: number){
 
       this.personas.splice(index,1); 
-
+      this.dataServices.eliminarPersona(index);
+      //se vuelve a guardar el arreglo para generar la lista de los nuevos 
+      this.modificarPeronas();
     }
+
+
+    modificarPeronas(){
+        if(this.personas!=null){
+          this.dataServices.guardarPersonas(this.personas);
+        }
+    }
+
+
 }

@@ -1,4 +1,7 @@
 export class Persona{
+    forEach(arg0: (dataServices: any) => void) {
+      throw new Error('Method not implemented.');
+    }
     
     
     /*nombre: string="";

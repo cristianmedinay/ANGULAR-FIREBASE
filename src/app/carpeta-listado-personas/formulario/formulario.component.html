@@ -1,37 +1,57 @@
-<div class="box">
-  <form class="item" #f="ngForm" (ngSubmit)="f.form.valid && agregarPersona()">
-    <input
-      type="text"
-      name="nombre"
-      id="nombre"
-      placeholder="nombre"
-      class="form-control"
-      [(ngModel)]="nombreInput"
-      required
-    />
-    <!--  [(ngModel)]="nombreInput"   #nombreRef-->
+<div class="container">
+  <form class="item" #f="ngForm" (ngSubmit)="f.form && agregarPersona()">
+    <div class="container">
+      <div class="row">
+        <input
+          type="text"
+          name="nombre"
+          id="nombre"
+          placeholder="nombre"
+          class="form-control"
+          [(ngModel)]="nombreInput"
+        />
+        <!--  [(ngModel)]="nombreInput"   #nombreRef-->
 
-    <input
-      type="text"
-      name="apellido"
-      id="apellido"
-      placeholder="apellido"
-      class="form-control"
-      [(ngModel)]="apellidoInput"
-      required
-    />
-    <!-- [(ngModel)]="apellidoInput"  #apellidoRef -->
+        <input
+          type="text"
+          name="apellido"
+          id="apellido"
+          placeholder="apellido"
+          class="form-control"
+          [(ngModel)]="apellidoInput"
+        />
+        <!-- [(ngModel)]="apellidoInput"  #apellidoRef -->
+      </div>
+    </div>
 
-    <button type="submit" style="cursor: pointer">+</button>
-    <button
-      type="submit"
-      *ngIf="index != null"
-      style="cursor: pointer"
-      class="buttonRed"
-      (click)="eliminarPersona()"
-    >
-      -
-    </button>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="row">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              style="cursor: pointer"
+            >
+              +
+            </button>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <button
+              class="btn btn-danger"
+              type="submit"
+              *ngIf="index != null"
+              style="cursor: pointer"
+              (click)="eliminarPersona()"
+            >
+              -
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </form>
   <!--form class="row gy-2 gx-3 align-items-center">
     <div class="form-group col-md-2">

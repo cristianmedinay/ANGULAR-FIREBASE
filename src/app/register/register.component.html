@@ -1,0 +1,12 @@
+<div class="formsx">
+  <form
+    class="row g-3 f"
+    action=""
+    #f="ngForm"
+    (ngSubmit)="f.form.valid && registroValidar(f)"
+  >
+    <input type="email" name="email" id="email" ngModel required />
+    <input type="password" name="password" id="email" ngModel required />
+    <button type="subtmit" class="btn btn-primary">Registrar</button>
+  </form>
+</div>

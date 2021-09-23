@@ -15,7 +15,15 @@ import { CarpetaListadoPersonasComponent } from './carpeta-listado-personas/carp
 import { ErrorComponent } from './error/error.component';
 import { DataServices } from './data.services';
 import { HttpClientModule } from '@angular/common/http';
-
+import { LoginComponent } from './login/login.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { LoginService } from './login.service';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { environment } from 'src/environments/environment.prod';
+import { LoginGuardian } from './login/login-guardian-service';
+import { RegisterComponent } from './register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,15 +33,23 @@ import { HttpClientModule } from '@angular/common/http';
     HijoPersonaComponent,
     FormularioComponent,
     CarpetaListadoPersonasComponent,
-    ErrorComponent
+    ErrorComponent,
+    LoginComponent,
+    RegisterComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAnalyticsModule,
+    AngularFirestoreModule,
+    MatSnackBarModule
+    
   ],
-  providers: [LoggingService,PersonasServicio,DataServices],
+  providers: [LoggingService,PersonasServicio,DataServices,LoginService,LoginGuardian],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

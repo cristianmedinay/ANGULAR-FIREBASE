@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-29a1f": {
+      "hosting": {
+        "Pro-uno": [
+          "angular-29a1f"
+        ]
+      }
+    }
+  }
+}

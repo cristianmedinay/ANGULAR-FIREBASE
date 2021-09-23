@@ -1,5 +1,6 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DataServices } from 'src/app/data.services';
 import { LoggingService } from '../../LoggingService.service';
 import { Persona } from '../../persona.model';
 import { PersonasServicio } from '../../personas.service';
@@ -27,7 +28,7 @@ export class FormularioComponent implements OnInit {
   @ViewChild('nombreRef') nombreRef: ElementRef;
 
   constructor(private logginService:LoggingService,private personaServicio:PersonasServicio,
-    private router:Router,private route:ActivatedRoute) {
+    private router:Router,private route:ActivatedRoute, private servicioP:DataServices) {
 
         this.personaServicio.emitirsaludo.subscribe(
             (indice:number)=>
@@ -73,6 +74,7 @@ export class FormularioComponent implements OnInit {
 
       if(this.edicion !=null && this.edicion===1){
         this.personaServicio.modificarPersona(this.index,perso);
+        //this.servicioP.modificarPersona(this.index,perso);
       }else{
         this.personaServicio.personaAgregada(perso);
       }

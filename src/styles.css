@@ -1,5 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 html {
+  background: url(./assets/bg-pattern.png), #2196f3;
+  background: url(./assets/bg-pattern.png),
+    -webkit-gradient(linear, right top, left top, from(#2196f3), to(#009688));
+  background: url(./assets/bg-pattern.png),
+    linear-gradient(to left, #2196f3, #009688);
+}
+/*html {
   background-color: #2196f3;
   min-height: 1000px;
   font-family: "helvetica neue";
@@ -99,3 +106,6 @@ input[type="text"]:focus {
   color: grey;
   opacity: 1;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }*/

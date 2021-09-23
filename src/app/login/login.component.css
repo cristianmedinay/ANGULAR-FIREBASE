@@ -1,0 +1,42 @@
+.formsx {
+  width: auto;
+  padding: 5%;
+  background-color: transparent;
+
+  background: url(../../assets/bg-pattern.png), #2196f3;
+  background: url(../../assets/bg-pattern.png),
+    -webkit-gradient(linear, right top, left top, from(#2196f3), to(#009688));
+  background: url(../../assets/bg-pattern.png),
+    linear-gradient(to left, #2196f3, #009688);
+}
+
+.email {
+  background-color: rgb(62, 101, 209);
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  width: 95%;
+  margin-right: 11px;
+}
+
+.password {
+  background-color: rgb(62, 101, 209);
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  width: 95%;
+  margin-right: 11px;
+}
+.f {
+  width: 50%;
+  height: auto;
+  background-color: rgb(30, 53, 116);
+  padding: 30px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+label {
+  width: 30%;
+  text-align: center;
+}
